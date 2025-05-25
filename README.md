@@ -1,31 +1,53 @@
-# Spam-classifier
-Dataset
+# Spam Classifier
 
-My dataset is a CSV file, which contains SMS messages labeled as either Spam or Ham. There are two columns, one is label which represent, whether the message is spam or ham and the other one is texxt, which contains the SMS message.
+## Dataset
 
-I dropped the irrelevant columns named, Unnamed: 2, Unnamed: 3 and Unnamed: 4 and then renamed the remaining columns to Label and Text.
+My dataset is a CSV file containing SMS messages labeled as either **Spam** or **Ham**.  
+It has two important columns:  
+- **Label**: Indicates whether the message is spam or ham  
+- **Text**: Contains the actual SMS message  
 
+I dropped irrelevant columns named `Unnamed: 2`, `Unnamed: 3`, and `Unnamed: 4`,  
+then renamed the remaining columns to `Label` and `Text`.
 
+---
 
-Preprocessing
+## Preprocessing
 
-All the characters where first converted to lowercase. All digits were removed using the regular expression. All punctuation symbols were also removed.
+- Converted all characters to **lowercase**  
+- Removed all **digits** using regular expressions  
+- Removed all **punctuation symbols**  
+- Balanced the dataset by equalizing the number of spam and ham messages to avoid model bias toward one class
 
-The dataset was balanced, as one label was more then the other, so that we can avoid the bias of the model towards that class.
+---
 
+## Model
 
+- **TF-IDF Vectorizer**: Converts text into numerical features based on the frequency of words in a message relative to the entire dataset  
+- **Multinomial Naive Bayes Classifier**: A fast and effective algorithm used for text classification  
 
-Model
+The dataset was split into:  
+- **80% for training**  
+- **20% for testing**
 
-TF-IDF Vectorizer: Converts text into numbers based on how often those words appear in a message vs. across the entire messages.
+---
 
-Multinomial Naive Bayes Classifier: A fast machine learning algorithm which is used for text classification.
+## Performance Metrics
 
-The dataset was split into two parts: 80% for training and 20% for testing
+The model was evaluated using:  
+- **Precision**  
+- **Recall**  
+- **F1-Score**  
+- **Accuracy**  
 
+These metrics help us understand how well the model identifies spam and non-spam messages.
 
+---
 
-Performance Metrics
+## Author
 
-Precision,Recall,F1-Score and Accuracy were used to evaluate the model. These metrics helps us to understand how well the model is in identifying spam and non-spam messages.
+**Jerin John Chacko**  
+MSc Data Analytics  
+Digital University Kerala  
 
+GitHub: [@jerinjc](https://github.com/jerinjc)
